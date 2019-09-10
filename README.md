@@ -5,7 +5,7 @@ This is based on Raspbian Buster Lite image. It will install GUI and Chromium.
 
 to use the script (and ignore the whole pipe to shell dangers):
 ```
-curl -L http://bit.ly/2keI3lA | sh
+curl -L http://bit.ly/2kei3LA | sh
 ```
 
 alternatively, download the script then run it
