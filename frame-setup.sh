@@ -19,8 +19,19 @@ fi
 #prompt for remote access
 read -p "Do you want to enable remote access (ssh and vnc)? " REPLY
 if [ "$REPLY" != "${REPLY#[Yy]}" ] ;then
-  echo "Please change your password now"
-  passwd
+  while true; do
+    echo "Please change your password now"
+    passwd
+    if [[ $? -ne 0 ]]
+      read -p "Do you want to try again? " RETRY_PASSWD
+      if [ "$RETRY_PASSWD" != "${RETRY_PASSWD#[Yy]}" ] ;then
+        continue
+      else
+        echo "We will skip remote access for now, you can enable this later on"
+        REPLY=N
+        break
+    fi
+  done
 else
   echo "Skipping this step"
 fi
