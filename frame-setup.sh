@@ -33,7 +33,6 @@ if [ "$REPLY" != "${REPLY#[Yy]}" ] ;then
   systemctl enable vncserver-X11-serviced
 fi
 
-# TO DO
 # set locale
 raspi-config nonint do_change_locale $locale
 raspi-config nonint do_configure_keyboard $layout
@@ -50,6 +49,9 @@ xscreensaver-command -restart
 #@xset s off
 #@xset s -dpms
 #@chromium-browser --start-fullscreen [URL]
+
+#cleanup
+apt autoremove && apt clean
 
 addr=$(ip a | grep "inet " | grep -v "host lo" | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" | head -n1)
 if [ "$REPLY" != "${REPLY#[Yy]}" ] ;then
