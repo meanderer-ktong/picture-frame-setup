@@ -6,9 +6,13 @@ This automates the setup for the client end of a raspberry pi powered, network/c
 
 How to install this?
 --------------------
-to use the script (and ignore the whole pipe to shell dangers):
+to use the script (and ignore the whole pipe to root shell dangers):
 ```
-curl -L https://git.io/JemY8 | sh
+curl -L https://git.io/JemY8 | sudo sh
+```
+for those with US keyboards and having a hard time typing in the pipe initially, do this first
+```
+raspi-config nonint do_configure_keyboard us
 ```
 
 alternatively, download the script, make sure the script is complete, then run it
