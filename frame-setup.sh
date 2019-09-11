@@ -10,7 +10,7 @@ timezone='America/New_York'
 #should we start?
 read -p "This will setup the raspberry pi for Dashboard/Picture Frame. Is this ok? " REPLY
 if [ "$REPLY" != "${REPLY#[Yy]}" ] ;then
-  break
+  :
 else
   echo "Bye!"
   exit 1
@@ -75,6 +75,3 @@ sudo apt -y --purge autoremove && apt clean
 
 #all done reboot
 sudo reboot
-
-
-
