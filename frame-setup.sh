@@ -7,8 +7,17 @@ country=US
 url=fill-me-in
 timezone='America/New_York'
 
+#should we start?
+read -p "This will setup the raspberry pi for Dashboard/Picture Frame. Is this ok? " REPLY
+if [ "$REPLY" != "${REPLY#[Yy]}" ] ;then
+  break
+else
+  echo "Bye!"
+  exit 1
+fi
+
 #prompt for remote access
-read -p "Do you want to enable remote access (ssh and vnc)? "
+read -p "Do you want to enable remote access (ssh and vnc)? " REPLY
 if [ "$REPLY" != "${REPLY#[Yy]}" ] ;then
   echo "Please change your password now"
   passwd
