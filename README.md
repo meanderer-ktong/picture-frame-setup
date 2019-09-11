@@ -8,7 +8,7 @@ How to install this?
 --------------------
 to use the script (and ignore the whole pipe to root shell dangers):
 ```
-curl -L https://git.io/JemXv | sudo sh
+curl -L https://git.io/JemY8 | sudo sh
 ```
 for those with US keyboards and having a hard time typing in the pipe initially, do this first
 ```
