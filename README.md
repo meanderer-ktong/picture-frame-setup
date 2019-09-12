@@ -8,7 +8,7 @@ How to install this?
 --------------------
 to use the script (and ignore the whole pipe to root shell dangers):
 ```
-curl -L https://git.io/JemY8 | sudo sh
+curl -sSL https://git.io/JemY8 > frame-setup.sh && bash frame-setup.sh 
 ```
 for those with US keyboards and having a hard time typing in the pipe initially, do this first
 ```
