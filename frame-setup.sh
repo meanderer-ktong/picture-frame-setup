@@ -7,6 +7,35 @@ country=US
 url=fill-me-in
 timezone='America/New_York'
 
+#should we start?
+read -p "This will setup the raspberry pi for Dashboard/Picture Frame. Is this ok? " REPLY
+if [ "$REPLY" != "${REPLY#[Yy]}" ] ;then
+  :
+else
+  echo "Bye!"
+  exit 1
+fi
+
+#prompt for remote access
+read -p "Do you want to enable remote access (ssh and vnc)? " REPLY
+if [ "$REPLY" != "${REPLY#[Yy]}" ] ;then
+  while true; do
+    echo "Please change your password now"
+    passwd
+    if [[ $? -ne 0 ]]
+      read -p "Do you want to try again? " RETRY_PASSWD
+      if [ "$RETRY_PASSWD" != "${RETRY_PASSWD#[Yy]}" ] ;then
+        continue
+      else
+        echo "We will skip remote access for now, you can enable this later on"
+        REPLY=N
+        break
+    fi
+  done
+else
+  echo "Skipping this step"
+fi
+
 #install GUI desktop, chromium and python GPIO
 sudo apt -y update
 sudo apt -y upgrade
@@ -17,10 +46,14 @@ sudo apt install -y raspberrypi-ui-mods lxsession pi-greeter rpd-icons gtk2-engi
 sudo apt install -y vim lxterminal unclutter
 sudo apt install -y chromium-browser 
 sudo apt install -y python3-gpiozero
-sudo apt install -y openssh-server
-sudo systemctl enable ssh
-sudo apt install -y realvnc-vnc-server
-sudo systemctl enable vncserver-x11-serviced
+
+#actually enabling remote access
+if [ "$REPLY" != "${REPLY#[Yy]}" ] ;then
+  sudo apt install -y openssh-server
+  sudo systemctl enable ssh
+  sudo apt install -y realvnc-vnc-server
+  sudo systemctl enable vncserver-x11-serviced
+fi
 
 # set locale
 export LANGUAGE=en_US.UTF-8
