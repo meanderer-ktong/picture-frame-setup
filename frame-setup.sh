@@ -83,6 +83,7 @@ sudo ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
 
 #cleanup
 sudo apt -y --purge autoremove && apt clean
+rm frame-setup.sh
 
 #all done reboot
 sudo reboot
