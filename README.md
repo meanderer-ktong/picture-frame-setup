@@ -21,3 +21,10 @@ wget https://raw.githubusercontent.com/meanderer-tech/picture-frame-setup/master
 sudo chmod +x frame-setup.sh
 sudo ./frame-setup.sh
 ```
+Credits
+-------
+This project won't be possible without pointers from the following resources:
+DAKboard - https://blog.dakboard.com/diy-wall-display/
+Ethan Seyl - https://gist.github.com/quelleck/1d8fc8395fd52d4aa38a99ef46d8598e
+
+
