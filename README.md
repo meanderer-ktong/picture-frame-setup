@@ -7,6 +7,7 @@ This automates the setup for the client end of a raspberry pi powered, network/c
 How to install this?
 --------------------
 to use the script (and ignore the whole pipe to root shell dangers):
+Get the raspberry pi online, either by ethernet or wifi (https://desertbot.io/blog/headless-raspberry-pi-3-bplus-ssh-wifi-setup), login to the console and type the following: 
 ```
 curl -sSL https://git.io/JemY8 > frame-setup.sh && bash frame-setup.sh 
 ```
