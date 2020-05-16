@@ -22,6 +22,11 @@ wget https://raw.githubusercontent.com/meanderer-tech/picture-frame-setup/master
 sudo chmod +x frame-setup.sh
 sudo ./frame-setup.sh
 ```
+
+Notes
+-----
+This requires major rehaul, and will come up soon
+
 Credits
 -------
 This project won't be possible without pointers from the following resources:
