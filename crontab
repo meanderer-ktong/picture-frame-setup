@@ -1,0 +1,4 @@
+# m h  dom mon dow   command
+#this example turns on 9 am and turn off at 9 pm, add more items for different schedules
+0 9 * * * /home/pi/.rpi-hdmi.sh on
+0 21 * * * /home/pi/.rpi-hdmi.sh off
