@@ -4,3 +4,9 @@
 @sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/Local\ State
 @unclutter
 @chromium-browser --incognito --check-for-update-interval=604800 --start-fullscreen [URL]
+#alternative browser luakit
+# @luakit [URL]
+# also add full screen configuration in /etc/xdg/luakit/rc.lua, before "End user script"
+# window.add_signal("init", function (w)
+#      w.win.fullscreen = true;
+# end)
